@@ -14,7 +14,7 @@ bd---
 '''
 
 def next_move(posr, posc, board):
-    d = len(board)^2  # traverse all tiles
+    d = len(board)*2  # traverse all tiles
     x, y = 0,0
     for i,row in enumerate(board):
         for j, val in enumerate(row): #    0 b   1 d   2 - ...

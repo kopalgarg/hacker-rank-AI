@@ -1,2 +1,2 @@
 # hacker-rank-AI
-hackerrank
+hackerrank AI: https://www.hackerrank.com/domains/ai

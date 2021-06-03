@@ -17,6 +17,9 @@ vector<string> split(const string &);
 
 vector<int> dynamicArray(int n, vector<vector<int>> queries) {
 
+  vector <vector <int>> s(n, vector <int> ());
+  int lastAnswer = 0;
+
 }
 
 int main()

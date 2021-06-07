@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int p(int a, int b){
+int greatest_common_divisor(int a, int b){
     assert(a > 0 && b > 0);
     
     if (a < b) swap(a, b);
@@ -22,6 +22,6 @@ int main(){
         for (j = 1; i <= 6; j++)
             if (i + j <=9)
                 count +=1;
-    out << p(total, count);
+    out << greatest_common_divisor(total, count);
 
 }

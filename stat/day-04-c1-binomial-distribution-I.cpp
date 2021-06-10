@@ -9,7 +9,7 @@ using namespace std;
 // factorial as a recursive function:
 int factorial(int n){
     if (n < 2){
-        return n;
+        return 1;
     }
     else{
         return(n*factorial(n-1));

@@ -4,7 +4,6 @@ using namespace std;
 
 vector<string> split_string(string);
 
-// Complete the minimumSwaps function below.
 int minimumSwaps(vector<int> arr) {
     int minSwap = 0;
     for (int i = 0 ; i < arr.size(); i++){

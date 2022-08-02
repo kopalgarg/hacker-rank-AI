@@ -1,0 +1,18 @@
+// Accepted Rate by Date
+// Link: https://platform.stratascratch.com/coding-question?id=10285&python=1
+
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+accepted = fb_friend_requests[fb_friend_requests['action'] == 'accepted']
+sent = fb_friend_requests[fb_friend_requests['action'] == 'sent']
+
+df = pd.merge(sent, accepted, how = 'left',
+              left_on=['user_id_sender','user_id_receiver'],
+              right_on = ['user_id_sender','user_id_receiver'])
+
+count = df.groupby(['date_x']).count().reset_index()
+
+count['acceptance_rate'] = count['action_y']/count['action_x']
+count = count[["date_x","acceptance_rate"]]

@@ -1,0 +1,18 @@
+// Premium vs Freemium
+// Link: https://platform.stratascratch.com/coding-question?id=10300&python=1
+
+import pandas as pd
+
+# Start writing code
+data = pd.merge(pd.merge(ms_user_dimension, ms_acc_dimension, how = 'left',
+                left_on = 'acc_id', right_on = 'acc_id'), ms_download_facts,
+                how = 'left', left_on = 'user_id', right_on = 'user_id')
+
+agg_data = data.pivot_table(index = ['date'], columns = ['paying_customer'], values = ['downloads'],
+                        aggfunc ='sum')
+
+agg_data = pd.DataFrame(agg_data.to_records()).fillna(0)
+agg_data['difference'] = agg_data["('downloads', 'no')"]-agg_data["('downloads', 'yes')"]
+agg_data = agg_data[agg_data['difference']>0]
+
+agg_data = agg_data[["date","('downloads', 'no')", "('downloads', 'yes')"]]

@@ -1,0 +1,12 @@
+# Popularity Percentage
+# Link: https://platform.stratascratch.com/coding-question?id=10284&python=1
+
+# Import your libraries
+import pandas as pd
+import numpy as np
+# Start writing code
+total_users = (facebook_friends['user1'] + facebook_friends['user2']).nunique()
+revert = facebook_friends.rename(columns= {'user1':'user2','user2':'user1'})
+final = pd.concat([facebook_friends, revert],sort = False).drop_duplicates()
+final = final.groupby('user1').size().to_frame('count').reset_index()
+final['popularity_percent'] = 100*(final['count']/ total_users)

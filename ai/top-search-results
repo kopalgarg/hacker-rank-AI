@@ -1,0 +1,9 @@
+// Top search results
+// Link: https://platform.stratascratch.com/coding-question?id=10288&python=1
+
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+df = fb_search_results[fb_search_results['position'] <4]
+percent = (df.shape[0]/fb_search_results.shape[0])*100

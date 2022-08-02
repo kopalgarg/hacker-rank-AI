@@ -1,0 +1,10 @@
+// Finding Updated Records
+// Link: https://platform.stratascratch.com/coding-question?id=10299&python=1
+# Import your libraries
+import pandas as pd
+
+# Start writing code
+df = ms_employee_salary.groupby('id')['salary'].max().reset_index(name = 'max_salary')
+
+df = pd.merge(df, ms_employee_salary, how = 'inner', left_on = 'id', right_on = 'id')
+df = df[["id", "first_name", "last_name", "department_id", "max_salary"]].drop_duplicates()

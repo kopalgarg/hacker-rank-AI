@@ -6,7 +6,6 @@ class Solution:
             return True
         else:
             rev_x = 0
-            len_x = int(len(str(x)))
             temp_x = x
             while temp_x>0:
                 rev_x = (rev_x * 10) + temp_x % 10
